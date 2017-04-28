@@ -1,20 +1,37 @@
 
+<main class="container city_show">
+    <div class="col-md-12">
+        <h1 class="col-md-12 center"><%= @city.title %></h1>
+        <!-- <h3>
+        longitude: <%= @city.longitude %> <br>
+        latitude: <%= @city.latitude %>
+        </h3> -->
+        <div class="col-md-12">
+            <img src="<%= @city.photo_url %>" alt="<%= @city.title %>" height="400px">
+        </div>
+        <div class="col-md-12">
+            <p>
+                <span class="col-md-12 center">Description</span>
+                 <%= @city.description %>
+            </p>
+        </div>
+        <div class="city_posts">
+            <% @posts.each do |post| %>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <img src="<%= post.user.photo_url %>">
+                </div>
+                <div class="col-md-6">
+                    <p class="text-capitalize"><%= link_to post.title, city_post_path(@city, post) %>,  <%= post.created_at.to_date %></p>
+                    <p><%= post.content %></p>
 
-<h1><%= @city.title %></h1>
-<h3>
-  longitude: <%= @city.longitude %> <br>
-  latitude: <%= @city.latitude %>
-</h3>
-<img src="<%= @city.photo_url %>" alt="" height="400px">
-<h3>
-  Description: <%= @city.description %>
-</h3>
-<ul>
-  <h5>
-<% @posts.each do |post| %>
-    <li><%= link_to post.title, city_post_path(@city, post) %></li>
-    <li><%= post.content %></li>
-    <li><%= post.created_at %></li>
-<% end %>
-  </h5>
-</ul>
+                </div>
+                <div class="col-md-12">
+                            </div>
+                <hr>
+            </div>
+
+            <% end %>
+        </div>
+    </div>
+</main>

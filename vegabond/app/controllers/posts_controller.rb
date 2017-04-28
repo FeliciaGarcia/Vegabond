@@ -4,7 +4,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # @post.create_at.order! 'created_at DESC'
     @city = @post.city
+    # binding.pry
   end
 
   def new
@@ -36,7 +38,7 @@ class PostsController < ApplicationController
 
   def delete
   end
-  
+
   def post_params
     params.require(:post)
       .permit(:title, :content)

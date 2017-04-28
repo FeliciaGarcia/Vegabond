@@ -36,12 +36,45 @@ nav {
     }
 }
 
+.city_show {
+    div {
+        div {
+            p {
+                font-size: 1em;
+                span{
+                    padding-top: 1em;
+                    font-size: 2em;
+                }
+                padding-bottom: 2em;
+            }
+        }
+    }
+    .city_posts {
+        div {
+            div {
+                img {
+                    max-width: 250px;
+                    max-height: 150px;
+                    min-height: 150px;
+                    min-width : 250px;
+                }
+            }
+            div {
+                p {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+
+}
 
 
 
 footer {
     border-top: 1px solid black;
     color: #007fb5;
+    padding-bottom: 0.5em;
     /*flex: 3;*/
 
     /*position: absolute;*/
