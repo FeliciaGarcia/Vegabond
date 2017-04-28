@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
     has_many :posts
     has_many :cities, through: :posts
+
+    validates :photo_url, presence: true
 end
