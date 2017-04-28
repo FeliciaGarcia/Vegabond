@@ -6,6 +6,7 @@ class CitiesController < ApplicationController
   def show
     @city = City.find(params[:id])
     @posts = @city.posts
+    @posts = @posts.order('updated_at DESC')
   end
 
   def edit
