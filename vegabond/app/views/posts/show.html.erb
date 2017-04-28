@@ -1,26 +1,4 @@
 
-
+<img src="<%= @post.user.photo_url %>" style="max-width: 200px">
 <h2><%= @post.title %></h2> <br>
 <h3><%= @post.content %></h3>
-<% if user_signed_in? %>
-    <%= link_to "Edit", edit_city_post_path %>
-<% end %>
-
-<div class="col-md-12">
-
-                    <a class="waves-effect waves-light btn red right" type="submit" href="#modal1">Delete</a>
-
-
-  <!-- Modal Structure -->
-                  <div id="modal1" class="modal">
-                    <div class="modal-content">
-                      <h4>Are you sure you wanna delete the post?</h4>
-
-                    </div>
-                    <div class="modal-footer">
-                      <a href="/cities/<%=@city.id%>/posts/<%= @post.id%>" data-method = "DELETE" class="modal-action modal-close waves-effect waves-green btn-flat">YES</a>
-                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
-                    </div>
-                  </div>
-
-                </div>
