@@ -8,11 +8,17 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @city = City.find(params[:city_id])
+    @post = Post.new
+    # binding.pry
   end
 
   def create
-
+    puts "create"
+    puts @post
+    @post = Post.create(post_params)
+    redirect_to cities_path
+    # binding.pry
   end
 
   def update
@@ -30,8 +36,7 @@ class PostsController < ApplicationController
 
   def delete
   end
-
-private
+  
   def post_params
     params.require(:post)
       .permit(:title, :content)

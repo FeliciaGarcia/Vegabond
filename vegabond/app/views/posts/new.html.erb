@@ -1,0 +1,16 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<%= form_for [@city, @post] do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+  </div>
+
+  <%= f.submit%>
+<% end %>
