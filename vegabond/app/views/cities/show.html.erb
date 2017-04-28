@@ -1,11 +1,20 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
 
-<%= @city.title %>
+
+<h1><%= @city.title %></h1>
+<h3>
+  longitude: <%= @city.longitude %> <br>
+  latitude: <%= @city.latitude %>
+</h3>
+<img src="<%= @city.photo_url %>" alt="" height="400px">
+<h3>
+  Description: <%= @city.description %>
+</h3>
 <ul>
+  <h5>
 <% @posts.each do |post| %>
-    <li><%= post.title %></li>
+    <li><%= link_to post.title, city_post_path(@city, post) %></li>
     <li><%= post.content %></li>
-    <li> <%= post.created_at %></li>
+    <li><%= post.created_at %></li>
 <% end %>
+  </h5>
 </ul>

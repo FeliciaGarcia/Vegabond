@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   end
 
   def show
-
+    @post = Post.find(params[:id])
+    @city = @post.city
   end
 
   def new
@@ -11,6 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new
     # binding.pry
   end
+
   def create
     puts "create"
     puts @post
@@ -19,12 +21,22 @@ class PostsController < ApplicationController
     # binding.pry
   end
 
+  def update
+    @post = Post.find(params[:id])
+    @city = City.find(params[:city_id])
+    @post.update(post_params)
+
+    redirect_to city_path(@city)
+  end
+
+
   def edit
+    @post = Post.find(params[:id])
   end
 
   def delete
   end
-
+  
   def post_params
     params.require(:post)
       .permit(:title, :content)
