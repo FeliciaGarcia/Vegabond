@@ -1,5 +1,4 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
+
 
 <h1><%= @city.title %></h1>
 <h3>
@@ -11,9 +10,11 @@
   Description: <%= @city.description %>
 </h3>
 <ul>
+  <h5>
 <% @posts.each do |post| %>
-    <li><%= link_to post.title, city_post_path(post.id) %></li>
+    <li><%= link_to post.title, city_post_path(@city, post) %></li>
     <li><%= post.content %></li>
     <li><%= post.created_at %></li>
 <% end %>
+  </h5>
 </ul>
