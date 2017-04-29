@@ -24,10 +24,13 @@
 
       <a href="/" class="brand-logo">Vagabond</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <% if user_signed_in? %>
-        <% if @city %>
+        <% if user_signed_in?  %>
+        <% if params[:id] %>
     <li><%= link_to "add post", new_city_post_path(@city)%></li>
   <% end %>
+  <% if current_user.is_admin? %>
+  <li><%= link_to "Add Cities", new_city_path %></li>
+<% end %>
          <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
 
 
