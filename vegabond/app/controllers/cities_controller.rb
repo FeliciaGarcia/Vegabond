@@ -10,6 +10,13 @@ class CitiesController < ApplicationController
   end
 
   def edit
+    @city = City.find(params[:id])
+  end
+
+  def update
+    @city = City.find(params[:id])
+    @city.update(city_params)
+    redirect_to cities_path
   end
 
   def new
@@ -19,7 +26,7 @@ class CitiesController < ApplicationController
   def create
     puts "city"
     @city = City.create(city_params)
-    # binding.pry
+
     redirect_to cities_path
   end
 
