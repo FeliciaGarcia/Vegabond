@@ -1,12 +1,12 @@
 <%= form_for @city do |f| %>
   <div>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => true %>
   </div>
 
   <div>
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :required => true %>
   </div>
 
   <div>
@@ -16,12 +16,12 @@
 
   <div>
     <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
+    <%= f.text_field :longitude, :required => true %>
   </div>
 
   <div>
     <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
+    <%= f.text_field :latitude, :required => true %>
   </div>
 
   <%= f.submit%>
