@@ -30,6 +30,13 @@ class CitiesController < ApplicationController
     redirect_to cities_path
   end
 
+  def destroy
+    @city = City.find(params[:id])
+    @city.destroy
+    # binding.pry
+    redirect_to cities_path
+  end
+
 
   def city_params
     params.require(:city)

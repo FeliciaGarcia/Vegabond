@@ -1,24 +1,39 @@
 @import "materialize";
+$logo_font: 'Dancing Script', cursive !important;
 
+$text_font: 'Titillium Web', sans-serif !important;
 
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: $text_font;
+
   }
 
 main {
     flex: 1 0 auto;
 }
 
+    .alert-success {
+       visibility: hidden
+    }
+
 nav {
+
     margin-bottom: 1em;
     background-color: #f2f2f2 !important;
 
-    .brand-logo {
+    .brand-logo  {
+        font-family: $logo_font;
       color: #007fb5 !important;
       margin-left: 1em;
+
       /*text-decoration: none;*/
+    }
+
+    .button-collapse {
+        color: #007fb5 !important;
     }
 
     .brand-logo:hover {
@@ -67,6 +82,16 @@ nav {
         }
     }
 
+}
+
+.slider {
+    img {
+    opacity: 0.8;
+    }
+
+    h3 {
+    font-family: $logo_font;
+    }
 }
 
 
