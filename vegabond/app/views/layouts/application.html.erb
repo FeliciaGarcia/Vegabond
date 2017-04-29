@@ -63,7 +63,7 @@
           <li><%= link_to "Add Cities", new_city_path %></li>
           <% end %>
           <% if params[:city_id] %>
-            <li><%= link_to "Post", new_city_post_path(@city)%></li>
+            <li><%= link_to "Post", new_city_post_path(params[:city_id])%></li>
           <% end %>
           <li><%= link_to "Pofile", userprofile_path(current_user.id)%></li>
          <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
