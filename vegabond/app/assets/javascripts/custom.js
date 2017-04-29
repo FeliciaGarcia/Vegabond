@@ -2,5 +2,6 @@
 
 setTimeout(function () {
     $('.slider').slider();
+    $(".button-collapse").sideNav();
     $('.modal').modal();
 })
