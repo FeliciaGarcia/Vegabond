@@ -25,7 +25,7 @@
       <a href="/" class="brand-logo">Vagabond</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in?  %>
-        <% if @city && params[:id] == 'true' %>
+        <% if params[:id] %>
     <li><%= link_to "add post", new_city_post_path(@city)%></li>
   <% end %>
   <% if current_user.is_admin? %>
