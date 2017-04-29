@@ -1,13 +1,17 @@
 
-
-<h1>Edit Post</h1>
-
-
-
-
+<div class="col-md-12 col-sm-12 col-xs-12 center login-form">
 <%= form_for @post, url: city_post_path(id: @post.id, city_id: @post.city_id) do |f| %>
-  Title: <%= f.text_field :title, :required => true %><br />
-  Content : <%= f.text_field :content, :required => true %><br />
+<div class="col-md-6 col-sm-8 col-xs-12 z-depth-4">
+<div>
+        <%= f.label :title, :class => 'left' %>
+   <%= f.text_field :title, :required => true %>
+   </div>
+   <div>
+       <%= f.label :content, :class => 'left' %>
+  <%= f.text_field :content, :required => true %>
+  </div>
 
-  <%= f.submit 'Update Post' %>
+  <%= f.submit 'Update Post', :class => 'btn  waves-effect waves-light btn-custom' %>
+    </div>
 <% end %>
+  </div>
