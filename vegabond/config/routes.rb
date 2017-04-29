@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   end
 
   patch '/cities/:id' => "cities#update", as: 'city_update'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root "cities#index"
