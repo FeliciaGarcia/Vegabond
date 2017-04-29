@@ -3,7 +3,7 @@
 <%= form_for @city, url: city_update_path(@city.id) do |f| %>
   <div>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => true %>
   </div>
 
   <div>
@@ -13,17 +13,17 @@
 
   <div>
     <%= f.label :photo_url %>
-    <%= f.text_field :photo_url %>
+    <%= f.text_field :photo_url, :required => true %>
   </div>
 
   <div>
     <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
+    <%= f.text_field :longitude, :required => true %>
   </div>
 
   <div>
     <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
+    <%= f.text_field :latitude, :required => true %>
   </div>
 
   <%= f.submit%>
