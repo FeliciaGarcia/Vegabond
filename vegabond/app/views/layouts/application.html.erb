@@ -44,7 +44,7 @@
             <li><%= link_to "Post", new_city_post_path(@city)%></li>
           <% end %>
           <% if !current_user.is_admin? %>
-          <li><%= link_to "Pofile", userprofile_path(current_user.id)%></li>
+          <li><%= link_to "Profile", userprofile_path(current_user.id)%></li>
           <% end %>
          <li><%= link_to "Sign Out", destroy_user_session_path, method: "delete" %></li>
 
