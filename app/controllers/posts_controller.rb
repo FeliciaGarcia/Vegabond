@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @city = City.find(params[:city_id])
     @post.destroy
-    redirect_to city_path(@city)
+    redirect_to  userprofile_path(current_user.id)
   end
 
   def post_params

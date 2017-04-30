@@ -1,35 +1,55 @@
-<h1>Userprofile#show</h1>
-<p>Find me in app/views/userprofile/show.html.erb</p>
+<div class="container">
+  <div class="col-md-12 col-sm-12 col-xs-12 user_bio ">
 
-
-
-
-<% @posts.each do |post|%>
-<h2><%= post.title %></h2> <br>
-<h3><%=post.content %></h3>
-<%=post.city_id%>
-<% if user_signed_in? %>
-
-    <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>/edit"><%= post.title%></a>
-<% end %>
-
-<div class="col-md-12">
-
-                    <a class="waves-effect waves-light btn red right" type="submit" href="#modal1">Delete</a>
-
-
-  <!-- Modal Structure -->
-                  <div id="modal1" class="modal">
-                    <div class="modal-content">
-                      <h4>Are you sure you wanna delete the post?</h4>
-
+<div class="col-md-4 col-sm-4 col-xs-4 ">
+                        <img class="img-responsive z-depth-5" src="<%= current_user.photo_url %>">
                     </div>
-                    <div class="modal-footer">
-                      <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>" data-method = "DELETE" class="modal-action modal-close waves-effect waves-green btn-flat">YES</a>
-                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                      <div class="col-md-8 col-sm-8 col-xs-8 city_title text-capitalize"><%=current_user.full_name%></div>
+                      <div class="col-md-4 col-sm-4 col-xs-4 text-right user_last_seen">Last seen <%=time_ago_in_words(current_user.last_sign_in_at).gsub('about','')%> ago</div>
+<div class="col-md-12 col-sm-12 col-xs-12 text-right">Email: <%=current_user.email%>
+</div>
                     </div>
-                  </div>
 
-                </div>
-<% end %>
+
+  </div>
+
+
+  <div class="city_posts col-md-12 col-sm-12 col-xs-12 ">
+    <% @posts.each do |post|%>
+      <div class="col-md-12 col-sm-12 col-xs-12 post_show z-depth-3">
+        <div class="col-md-12 col-sm-12 col-xs-12 user_post_show">
+          <div class="col-md-8 col-sm-8 col-xs-8">
+          <p class="text-capitalize"><%= link_to post.title, city_post_path(post.city_id, post.id) %></p>
+
+          </div>
+          <% if user_signed_in? %>
+          <div class="col-md-2 col-sm-2 col-xs-2 text-right">
+
+
+        <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>/edit"><i class="material-icons edit_icon hoverable">mode_edit</i></a>
+
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 text-right">
+
+            <%= link_to '<i class="material-icons delete_icon hoverable">delete</i>'.html_safe, city_post_path(post.city_id, post.id), :data => {:confirm => "Are you sure you want to delete #{post.title}?"}, :method => 'delete', :class => ' ' %>
+          </div>
+          <% end %>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<p class="post_desc"><%= post.content %></p>
+
+</div>
+
+      </div>
+
+
+    <% end %>
+
+  </div>
+
+</div>
+
+
+
 

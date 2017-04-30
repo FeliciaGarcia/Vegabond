@@ -38,7 +38,8 @@
                     <div class="col-md-9 col-sm-9 col-xs-9">
                         <p class="text-capitalize"><%= link_to post.title, city_post_path(@city, post) %></p>
                         <p class="post_desc"><%= post.content %></p>
-                        <p class="text-capitalize text-right">By: <%= post.user.full_name %>,  <%= post.created_at.to_date %></p>
+                        <!-- <p class="post_desc"><%# truncate(post.content, length: 1000) %></p> -->
+                        <p class="text-capitalize text-right">By: <%= post.user.full_name %>,  <%= time_ago_in_words(post.created_at) %> ago</p>
                     </div>
 
 

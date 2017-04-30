@@ -71,38 +71,6 @@ nav {
     }
 }
 
-.city_show {
-    div {
-        div {
-            p {
-                font-size: 1em;
-                span{
-                    padding-top: 1em;
-                    font-size: 2em;
-                }
-                padding-bottom: 2em;
-            }
-        }
-    }
-    .city_posts {
-        div {
-            div {
-                img {
-                    max-width: 200px;
-                    max-height: 120px;
-                    min-height: 120px;
-                    min-width : 200px;
-                }
-            }
-            div {
-                p {
-                    font-size: 1.2em;
-                }
-            }
-        }
-    }
-
-}
 
 .btn-custom {
     background: $text_color;
@@ -154,6 +122,19 @@ nav {
     padding: 1em;
 }
 
+.user_post_show {
+    border-bottom: dashed 1px grey;
+    /*@extend .post_show;*/
+}
+
+.user_bio {
+    margin: 2em 0;
+}
+
+.user_last_seen {
+    padding-top: 0.5em;
+}
+
 .post_desc {
     /*height: 100px;*/
     width: 100%;
@@ -175,7 +156,7 @@ a:hover {
 
 .edit_icon {
     color: green;
-    /*border-radius: 50%;*/
+    border-radius: 50%;
 }
 
 
