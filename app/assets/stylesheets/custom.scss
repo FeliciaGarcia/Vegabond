@@ -134,8 +134,37 @@ nav {
 
 .city_title {
     font-size: 1.8em;
+    text-shadow: $text_shadow;
+}
 
+.city_post_title {
+    /*margin: 2em 0 1em;*/
+    font-size: 1.8em;
+    /*border-bottom: 1px dotted grey;*/
+    @extend .city_title;
+}
 
+.city_show_desc {
+    /*text-shadow: none;*/
+    @extend .city_index_desc;
+}
+
+.post_show {
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.post_desc {
+    /*height: 100px;*/
+    width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*padding-left: 2em;*/
+}
+
+.pagination {
+    font-size: 1.2em;
 }
 
 a:hover {

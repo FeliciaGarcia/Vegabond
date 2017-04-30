@@ -1,52 +1,54 @@
-
-
-    <div class="col-md-12">
-        <!-- <h3>
-        longitude: <%= @city.longitude %> <br>
-        latitude: <%= @city.latitude %>
-        </h3> -->
-<div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="<%= @city.photo_url %>" alt="<%= @city.title %>"> <!-- random image -->
-        <div class="caption center-align">
-          <h1 class="text-uppercase"><%= @city.title %></h1>
-        </div>
-      </li>
-      </ul>
-      </div>
-
-<% will_paginate @posts %>
+<div class="col-md-12">
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="<%= @city.photo_url %>" alt="<%= @city.title %>">
+                <div class="caption center-align">
+                    <h1 class="text-uppercase"><%= @city.title %></h1>
+                </div>
+            </li>
+        </ul>
+    </div>
     <div class="container">
-        <div class="col-md-12">
-            <p>
-                <span class="col-md-12 center">Description</span>
-                 <%= @city.description %>
-            </p>
+        <!-- <div class="col-md-12 col-sm-12 col-xs-12 center city_show_title text-uppercase">Description</div> -->
+        <!-- <hr class="col-md-12 col-sm-12 col-xs-12"> -->
+        <div class="city_show_desc col-md-12 col-sm-12 col-xs-12">
+                <%= @city.description %>
         </div>
-        Posts:<%= @count %>
-        <div class="city_posts">
-            <% @posts.each do |post| %>
 
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <img src="<%= post.user.photo_url %>">
+        <hr class="col-md-12 col-sm-12 col-xs-12">
 
-                </div>
-                <div class="col-md-6">
-                    <p class="text-capitalize"><%= link_to post.title, city_post_path(@city, post) %>,  <%= post.created_at.to_date %></p>
-                    <p><%= post.content %></p>
-
-                </div>
-
-                <hr>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6 city_post_title text-uppercase">Posts
             </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 city_post_title text-uppercase text-right">Count: <%= @count %>
+            </div>
+        </div>
 
-<hr>
+        <hr class="col-md-12 col-sm-12 col-xs-12">
+
+
+        <div class="city_posts col-md-12 col-sm-12 col-xs-12 ">
+            <% @posts.each do |post| %>
+                <div class="col-md-12 col-sm-12 col-xs-12 post_show z-depth-3">
+                    <div class="col-md-3 col-sm-3 col-xs-3 img-responsive">
+                        <img class="img-responsive" src="<%= post.user.photo_url %>">
+                    </div>
+
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <p class="text-capitalize"><%= link_to post.title, city_post_path(@city, post) %></p>
+                        <p class="post_desc"><%= post.content %></p>
+                        <p class="text-capitalize text-right">By: <%= post.user.full_name %>,  <%= post.created_at.to_date %></p>
+                    </div>
+
+
+                </div>
             <% end %>
-            <%= will_paginate @posts %>
 
+            <hr class="col-md-12 col-sm-12 col-xs-12">
+
+            <div class="col-md-12 col-sm-12 col-xs-12 center pagination"><%= will_paginate @posts %></div>
         </div>
     </div>
-    </div>
+</div>
 
