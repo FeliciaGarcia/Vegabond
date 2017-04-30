@@ -1,14 +1,23 @@
 
-<main class="container city_show">
+
     <div class="col-md-12">
-        <h1 class="col-md-12 center"><%= @city.title %></h1>
         <!-- <h3>
         longitude: <%= @city.longitude %> <br>
         latitude: <%= @city.latitude %>
         </h3> -->
-        <div class="col-md-12">
-            <img src="<%= @city.photo_url %>" alt="<%= @city.title %>" height="400px">
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="<%= @city.photo_url %>" alt="<%= @city.title %>"> <!-- random image -->
+        <div class="caption center-align">
+          <h1 class="text-uppercase"><%= @city.title %></h1>
         </div>
+      </li>
+      </ul>
+      </div>
+
+
+    <div class="container">
         <div class="col-md-12">
             <p>
                 <span class="col-md-12 center">Description</span>
@@ -34,4 +43,5 @@
             <% end %>
         </div>
     </div>
-</main>
+    </div>
+
