@@ -1,33 +1,8 @@
 <div class="col-md-12 col-sm-12 col-xs-12 center login-form">
 <%= form_for @city do |f| %>
-<div class="col-md-6 col-sm-8 col-xs-12 z-depth-4">
 
-  <div>
-    <%= f.label :title, :class => 'left' %>
-    <%= f.text_field :title, :required => true %>
-  </div>
+  <%= render 'form', f: f %>
 
-  <div>
-    <%= f.label :description, :class => 'left' %>
-    <%= f.text_field :description, :required => true %>
-  </div>
-
-  <div>
-    <%= f.label :photo_url, :class => 'left' %>
-    <%= f.text_field :photo_url, :required => true %>
-  </div>
-
-  <div>
-    <%= f.label :longitude, :class => 'left' %>
-    <%= f.text_field :longitude, :required => true %>
-  </div>
-
-  <div>
-    <%= f.label :latitude, :class => 'left' %>
-    <%= f.text_field :latitude, :required => true %>
-  </div>
-
-  <%= f.submit "Add City", :class => 'btn  waves-effect waves-light btn-custom'%>
 
   </div>
 <% end %>
