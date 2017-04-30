@@ -3,6 +3,8 @@ $logo_font: 'Dancing Script', cursive !important;
 
 $text_font: 'Titillium Web', sans-serif !important;
 
+$text_color: #007fb5 !important;
+
 body {
     display: flex;
     min-height: 100vh;
@@ -26,14 +28,14 @@ nav {
 
     .brand-logo  {
         font-family: $logo_font;
-      color: #007fb5 !important;
+      color: $text_color;
       margin-left: 1em;
 
       /*text-decoration: none;*/
     }
 
     .button-collapse {
-        color: #007fb5 !important;
+        color: $text_color;
     }
 
     .brand-logo:hover {
@@ -42,12 +44,26 @@ nav {
 
     ul {
         a {
-            color: #007fb5 !important;
+            color: $text_color;
         }
 
         a:hover {
             text-decoration: none;
         }
+    }
+}
+
+.login-form {
+    margin-top: 2em;
+    float: none;
+
+    .z-depth-4 {
+        padding: 2em;
+    }
+
+    div {
+        float: none;
+        margin: 0 auto;
     }
 }
 
@@ -84,6 +100,10 @@ nav {
 
 }
 
+.btn-custom {
+    background: $text_color;
+}
+
 .slider {
     img {
     opacity: 0.8;
@@ -98,7 +118,7 @@ nav {
 
 footer {
     border-top: 1px solid black;
-    color: #007fb5;
+    color: $text_color;
     padding-bottom: 0.5em;
     /*flex: 3;*/
 

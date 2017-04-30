@@ -1,30 +1,33 @@
-<h1>Cities#edit</h1>
-<p>Find me in app/views/cities/edit.html.erb</p>
+<div class="col-md-12 col-sm-12 col-xs-12 center login-form">
 <%= form_for @city, url: city_update_path(@city.id) do |f| %>
+<div class="col-md-6 col-sm-8 col-xs-12 z-depth-4">
   <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :title, :class => 'left' %>
+    <%= f.text_field :title, :required => true %>
   </div>
 
   <div>
-    <%= f.label :description %>
+    <%= f.label :description, :class => 'left' %>
     <%= f.text_field :description %>
   </div>
 
   <div>
-    <%= f.label :photo_url %>
-    <%= f.text_field :photo_url %>
+    <%= f.label :photo_url, :class => 'left' %>
+    <%= f.text_field :photo_url, :required => true %>
   </div>
 
   <div>
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
+    <%= f.label :longitude, :class => 'left' %>
+    <%= f.text_field :longitude, :required => true %>
   </div>
 
   <div>
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
+    <%= f.label :latitude, :class => 'left' %>
+    <%= f.text_field :latitude, :required => true %>
   </div>
 
-  <%= f.submit%>
+  <%= f.submit "Update Changes", :class => 'btn  waves-effect waves-light btn-custom'%>
+  </div>
 <% end %>
+
+</div>
