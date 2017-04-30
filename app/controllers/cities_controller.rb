@@ -7,8 +7,11 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @posts = @city.posts
     @count = @city.posts.count
+    # @posts = @posts.reorder("updated_at DESC").paginate(:page => params[:page], :per_page => 10)
+    @posts = @posts.reorder("updated_at DESC").paginate(:page => params[:page], :per_page => 5)
+
     # binding.pry
-    @posts = @posts.order('updated_at DESC')
+    # @posts = @posts.order('updated_at DESC')
   end
 
   def edit
