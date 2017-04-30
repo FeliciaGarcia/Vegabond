@@ -18,8 +18,10 @@ class PostsController < ApplicationController
   def create
     puts "create"
     puts @post
+    @city = City.find(params[:city_id])
     @post = Post.create(post_params)
-    redirect_to cities_path
+    # redirect_to cities_path
+    redirect_to city_path(@city)
     # binding.pry
   end
 
@@ -28,7 +30,8 @@ class PostsController < ApplicationController
     @city = City.find(params[:city_id])
     @post.update(post_params)
 
-    redirect_to city_path(@city)
+    # redirect_to city_path(@city)
+    redirect_to userprofile_path(@current_user.id)
   end
 
 
