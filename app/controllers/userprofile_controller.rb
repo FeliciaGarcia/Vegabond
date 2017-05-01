@@ -7,6 +7,7 @@ class UserprofileController < ApplicationController
   def show
     @user = current_user
     @posts = @user.posts
+    @count = @user.posts.count
     # binding.pry
   end
 

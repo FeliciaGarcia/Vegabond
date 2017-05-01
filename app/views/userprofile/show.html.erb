@@ -9,6 +9,8 @@
                       <div class="col-md-4 col-sm-4 col-xs-4 text-right user_last_seen">Last seen <%=time_ago_in_words(current_user.last_sign_in_at).gsub('about','')%> ago</div>
 <div class="col-md-12 col-sm-12 col-xs-12 text-right">Email: <%=current_user.email%>
 </div>
+<div class="col-md-12 col-sm-12 col-xs-12 text-right">Posts: <%=@count%>
+</div>
                     </div>
 
 
