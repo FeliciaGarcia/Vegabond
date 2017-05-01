@@ -1,55 +1,67 @@
 <div class="container">
   <div class="col-md-12 col-sm-12 col-xs-12 user_bio ">
+    <div class="col-md-4 col-sm-4 col-xs-4 ">
+      <img class="img-responsive z-depth-5" src="<%= current_user.photo_url %>">
+    </div>
 
-<div class="col-md-4 col-sm-4 col-xs-4 ">
-                        <img class="img-responsive z-depth-5" src="<%= current_user.photo_url %>">
-                    </div>
-                    <div class="col-md-8 col-sm-8 col-xs-8">
-                      <div class="col-md-8 col-sm-8 col-xs-8 city_title text-capitalize"><%=current_user.full_name%></div>
-                      <div class="col-md-4 col-sm-4 col-xs-4 text-right user_last_seen">Last seen <%=time_ago_in_words(current_user.last_sign_in_at).gsub('about','')%> ago</div>
-<div class="col-md-12 col-sm-12 col-xs-12 text-right">Email: <%=current_user.email%>
-</div>
-<div class="col-md-12 col-sm-12 col-xs-12 text-right">Posts: <%=@count%>
-</div>
-                    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8">
+      <div class="col-md-8 col-sm-8 col-xs-8 city_title text-capitalize">
+        <%=current_user.full_name%>
+      </div>
 
+      <div class="col-md-4 col-sm-4 col-xs-4 text-right user_last_seen">
+        Last seen <%=time_ago_in_words(current_user.last_sign_in_at).gsub('about','')%> ago
+      </div>
 
+      <div class="col-md-4 col-sm-4 col-xs-4 text-right user_created">
+        User since <%=time_ago_in_words(current_user.created_at).gsub('about','')%>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+        Email: <%=current_user.email%>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+        Posts: <%=@count%>
+      </div>
+    </div>
   </div>
 
 
   <div class="city_posts col-md-12 col-sm-12 col-xs-12 ">
+
     <% @posts.each do |post|%>
       <div class="col-md-12 col-sm-12 col-xs-12 post_show z-depth-3">
         <div class="col-md-12 col-sm-12 col-xs-12 user_post_show">
+
           <div class="col-md-8 col-sm-8 col-xs-8">
-          <p class="text-capitalize"><%= link_to post.title, city_post_path(post.city_id, post.id) %></p>
-
+            <p class="text-capitalize"><%= link_to post.title, city_post_path(post.city_id, post.id) %></p>
           </div>
+
           <% if user_signed_in? %>
-          <div class="col-md-2 col-sm-2 col-xs-2 text-right">
 
+            <div class="col-md-2 col-sm-2 col-xs-2 text-right">
+              <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>/edit"><i class="material-icons edit_icon hoverable">mode_edit</i></a>
+            </div>
 
-        <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>/edit"><i class="material-icons edit_icon hoverable">mode_edit</i></a>
-
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-2 text-right">
-
-            <%= link_to '<i class="material-icons delete_icon hoverable">delete</i>'.html_safe, city_post_path(post.city_id, post.id), :data => {:confirm => "Are you sure you want to delete #{post.title}?"}, :method => 'delete', :class => ' ' %>
-          </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 text-right">
+              <%= link_to '<i class="material-icons delete_icon hoverable">delete</i>'.html_safe, city_post_path(post.city_id, post.id), :data => {:confirm => "Are you sure you want to delete #{post.title}?"}, :method => 'delete' %>
+            </div>
           <% end %>
-</div>
-<div class="col-md-12 col-sm-12 col-xs-12">
-<p class="post_desc"><%= post.content %></p>
+        </div>
 
-</div>
-
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <p class="post_desc"><%= post.content %></p>
+        </div>
       </div>
-
-
     <% end %>
 
-  </div>
+      <hr class="col-md-12 col-sm-12 col-xs-12">
 
+      <div class="col-md-12 col-sm-12 col-xs-12 center pagination">
+        <%= will_paginate @posts %>
+      </div>
+  </div>
 </div>
 
 
