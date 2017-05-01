@@ -11,6 +11,7 @@ class UserprofileController < ApplicationController
     @posts = @posts.reorder("updated_at DESC").paginate(:page => params[:page], :per_page => 5)
 
     # binding.pry
+    #controller for the user show page and the amount of posts each user created
   end
 
   def edit
