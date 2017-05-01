@@ -39,6 +39,7 @@ gem 'devise', '4.2.1'
 gem 'pry'
 gem 'materialize-sass'
 gem 'will_paginate'
+gem 'google-analytics-rails', '1.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -26,6 +26,8 @@
     <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
+     <%= analytics_init if GoogleAnalytics.valid_tracker? %>
+
 
   </head>
 
@@ -110,6 +112,8 @@
     $(".button-collapse").sideNav();
     $('.modal').modal();
      </script>
+
+
 
   </body>
 </html>
