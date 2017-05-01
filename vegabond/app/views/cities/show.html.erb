@@ -26,13 +26,13 @@
         </div>
         <div class="city_posts">
             <% @posts.each do |post| %>
-            <div class="col-md-12">
+            <div class="col-md-12 comment-section">
                 <div class="col-md-6">
-                    <img src="<%= post.user.photo_url %>">
+                    <img src="<%= post.user.photo_url %>" style="height:100px;width:100px;">
 
                 </div>
                 <div class="col-md-6">
-                    <p class="text-capitalize"><%= link_to post.title, city_post_path(@city, post) %>,  <%= post.created_at.to_date %></p>
+                    <p class="text-capitalize"><%= link_to post.title, city_post_path(@city, post) %>,  <%= time_ago_in_words(Time.now) %></p>
                     <p><%= post.content %></p>
 
                 </div>
