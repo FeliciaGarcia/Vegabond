@@ -162,6 +162,26 @@ a:hover {
     border-radius: 50%;
 }
 
+.location_name {
+    margin-top: 6.4em;
+    a{
+       color: white !important ;
+       text-shadow: $text_shadow;
+    }
+
+    a:hover {
+       color: $text-color;
+
+    }
+}
+
+.location_heading {
+    text-shadow: $text_shadow;
+    padding-bottom: 0.6em;
+    /*border-bottom: 1px solid black;*/
+    /*font-family: $text_font;*/
+}
+
 
 
 footer {
@@ -173,8 +193,3 @@ footer {
     font-family: $logo_font;
 }
 
-.city-pic {
-  height: 500px;
-  width: 900px;
-  border: 2px solid black;
-}

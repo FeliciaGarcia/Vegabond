@@ -1,4 +1,4 @@
-<div>
+<div class="col-md-12 col-sm-12 col-xs-12">
         <!-- <img src="https://www.atlantatrails.com/images/home/hero/georgia-waterfalls-top-hikes.jpg" style="width: 100vw; min-height: 400px;  "> -->
 
        <div class="slider">
@@ -38,19 +38,38 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p></div>
     </div>
+</div>
 
+<div>
+<div class="col-md-12 col-sm-12 col-xs-12 ">
+  <hr class="col-md-12 col-sm-12 col-xs-12">
+  <h3 class="location_heading center text-uppercase">Locations</h3>
 
-<div class="row ">
-  <h3>Locations</h3>
+  <hr class="col-md-12 col-sm-12 col-xs-12">
     <ul >
 <hr class="col-md-12 col-sm-12 col-xs-12  ">
 
 <% @cities.each do |city| %>
 
+<div class="slider">
+    <ul class="slides">
+    <li>
+        <img class = 'city-pic col-md-12 ' src="<%= city.photo_url %>" alt="" >
+         <!-- random image -->
+         <div class="caption center-align">
+          <h3 class="location_name text-capitalize"><%= link_to city.title, city_path(city) %></h3>
+        </div>
+      </li>
+    </ul>
+</div>
 
-    <li class="col-md-8 col-sm-8 col-xs-8 text-uppercase city_title">
-      <a href="<%= city_path(city) %>"><img class = 'city-pic' src="<%= city.photo_url %>" alt="" ></a>
-      <%= link_to city.title, city_path(city) %>
+
+    <li class="col-md-12 col-sm-12 col-xs-12 text-uppercase city_title">
+      <a href="<%= city_path(city) %>">
+      <!-- <img class = 'city-pic col-md-12 ' src="<%= city.photo_url %>" alt="" > -->
+
+      </a>
+      <!-- <div class="caption center-align"><%= link_to city.title, city_path(city) %></div> -->
     </li>
     <% if user_signed_in?  %>
     <% if current_user.is_admin? %>
@@ -63,6 +82,10 @@
 <% end %>
 </ul>
 </div>
+
+</div>
+
+<div class="container">
 <% if user_signed_in?%>
 <div id="map" style="width:100%;height:400px;"class="z-depth-3"></div>
 <% end %>
