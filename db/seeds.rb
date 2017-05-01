@@ -7,10 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-City.destroy_all
-Post.destroy_all
-
-city = City.create([{title: 'Atlanta', description: 'growing city', photo_url: 'http://i.imgur.com/TKVACkb.jpg', longitude: '33.7490', latitude: '84.3880'}])
-# city = City.create([{title: 'New york', description: 'growing city', photo_url: 'http://i.imgur.com/TKVACkb.jpg', longitude: '33.7490', latitude: '84.3880'}])
-post = Post.create([{user_id: 1, city_id:14, title: 'Love this city', content:'the beltline is dank'}])
-# post = Post.create([{user_id: 1, city_id:6, content:'the beltline is dank'}])
+user = User.create([{email: 'lanchana@gmail.com', photo_url: "http://i1320.photobucket.com/albums/u528/lanchanagupta/profile-pic_zpsyjza7zrf.jpg", is_admin: true, password: "lanchana", password_confirmation: "lanchana"}])
