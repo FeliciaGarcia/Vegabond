@@ -18,6 +18,23 @@ body {
 
   }
 
+.location_heading {
+    text-shadow: $text_shadow;
+}
+
+.quote,
+.location_name{
+    margin-top: 6.4em;
+    text_shadow: $text_shadow;
+    a {
+        color: $off_white ;
+    }
+
+    a:hover {
+        color: $text_color;
+    }
+}
+
 main {
     flex: 1 0 auto;
 }
