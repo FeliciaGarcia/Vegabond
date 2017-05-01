@@ -1,6 +1,6 @@
 @import "materialize";
 /*$logo_font: 'Dancing Script', cursive !important;*/
-$logo_font: 'News Cycle', sans-serif !important;
+$logo_font: 'Dancing Script', cursive !important;
 
 $text_font: 'Titillium Web', sans-serif !important;
 
@@ -24,14 +24,6 @@ main {
 
 .alert-success {
    visibility: hidden
-}
-
-.delete_user_text {
-    color: red !important;
-}
-
-.delete_user_account {
-    padding: 1em 0;
 }
 
 nav {
@@ -171,26 +163,6 @@ a:hover {
     border-radius: 50%;
 }
 
-.location_name, .quote {
-    margin-top: 6.4em;
-    a{
-       color: white !important ;
-       text-shadow: $text_shadow;
-    }
-
-    a:hover {
-       color: $text-color;
-
-    }
-}
-
-.location_heading {
-    text-shadow: $text_shadow;
-    padding-bottom: 0.6em;
-    /*border-bottom: 1px solid black;*/
-    /*font-family: $text_font;*/
-}
-
 
 
 footer {
@@ -200,5 +172,13 @@ footer {
     background : $off_white;
     margin-top: 1em;
     font-family: $logo_font;
+}
+
+.delete_user_account {
+    margin-top: 1em;
+}
+
+.delete_user_text {
+    color: red;
 }
 
