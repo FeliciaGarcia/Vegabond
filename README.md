@@ -33,6 +33,8 @@ We used rails as our framework for this application, postsequal database, and se
 
 our app is currently deployed on heroku: https://tranquil-hollows-93014.herokuapp.com/users/sign_up
 
+here is a presentation of our project https://www.haikudeck.com/p/a97a7a8d8a/share-your-travel-experiences
+
 and here is our trello: https://trello.com/b/DtGRZfax/vagabond-project
 
 
