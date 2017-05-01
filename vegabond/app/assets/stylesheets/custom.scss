@@ -1,0 +1,143 @@
+@import "materialize";
+
+
+
+
+$text_color: #007fb5 !important;
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'News Cycle', sans-serif;
+    }
+
+main {
+    flex: 1 0 auto;
+     }
+
+.alert-success {
+    visibility: hidden
+    }
+
+nav {
+    margin-bottom: 1em;
+
+    .brand-logo  {
+    font-family: 'News Cycle', sans-serif;
+    color: $text_color;
+    margin-left: 1em;
+    }
+
+.button-collapse {
+    color: $text_color;
+    }
+
+.brand-logo:hover {
+    text-decoration: none;
+    }
+
+ul {
+    a {
+    color: $text_color;
+        }
+
+ a:hover {
+    text-decoration: none;
+        }
+    }
+}
+
+.login-form {
+    margin-top: 2em;
+    float: none;
+
+    .z-depth-4 {
+        padding: 2em;
+    }
+
+div {
+    float: none;
+    margin: 0 auto;
+    }
+}
+
+.city_show {
+    div {
+        div {
+            p {
+                font-size: 1em;
+                span{
+                    padding-top: 1em;
+                    font-size: 2em;
+                }
+                padding-bottom: 2em;
+            }
+        }
+    }
+.city_posts {
+        div {
+            div {
+                img {
+                    max-width: 200px;
+                    max-height: 120px;
+                    min-height: 120px;
+                    min-width : 200px;
+
+
+                }
+            }
+            div {
+                p {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+
+}
+
+.btn-custom {
+    background: $text_color;
+}
+
+.slider {
+    img {
+    opacity: 0.8;
+    }
+
+    h4 {
+   font-family: 'News Cycle', sans-serif;
+   text-align: center;
+   margin-top: 250px;
+   text-shadow: 4px 2px 4px #000000;
+    }
+}
+
+
+
+footer {
+    border-top: 1px solid black;
+    color: $text_color;
+    padding-bottom: 0.5em;
+}
+
+.comment-section {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    border: .3px solid grey;
+    border-radius: 4px;
+}
+
+.profile_page {
+
+}
+
+.posts-section {
+    
+     margin-bottom: 10px;
+     padding-bottom: 20px;
+     border: .3px solid grey;
+     border-radius: 4px;
+}
+
