@@ -9,7 +9,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font-family: $text_font;
+    font-family: 'News Cycle', sans-serif;
 
   }
 
@@ -27,9 +27,9 @@ nav {
     background-color: #f2f2f2 !important;
 
     .brand-logo  {
-        font-family: $logo_font;
-      color: $text_color;
-      margin-left: 1em;
+    font-family: 'News Cycle', sans-serif;
+    color: $text_color;
+    margin-left: 1em;
 
       /*text-decoration: none;*/
     }
@@ -88,6 +88,8 @@ nav {
                     max-height: 120px;
                     min-height: 120px;
                     min-width : 200px;
+
+
                 }
             }
             div {
@@ -109,8 +111,11 @@ nav {
     opacity: 0.8;
     }
 
-    h3 {
-    font-family: $logo_font;
+    h4 {
+   font-family: 'News Cycle', sans-serif;
+   text-align: center;
+   margin-top: 250px;
+    text-shadow: 4px 2px 4px #000000;
     }
 }
 
@@ -124,5 +129,38 @@ footer {
 
     /*position: absolute;*/
     /*bottom: 0;*/
+}
+
+.comment-section {
+    margin-bottom: 10px;
+     padding-bottom: 20px;
+     border: .3px solid grey;
+     border-radius: 4px;
+     
+}
+
+/*.col-md-12 {
+   
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+}*/
+.profile_page {
+   /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content:center;
+    align-items: center;*/
+}
+/*.col-md-6 {
+    padding: 10px;
+}*/
+
+.posts-section {
+    
+     margin-bottom: 10px;
+     padding-bottom: 20px;
+     border: .3px solid grey;
+     border-radius: 4px;
 }
 
