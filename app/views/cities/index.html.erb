@@ -39,12 +39,19 @@
         </p></div>
     </div>
 
+
 <div class="row ">
+  <h3>Locations</h3>
     <ul >
 <hr class="col-md-12 col-sm-12 col-xs-12  ">
+
 <% @cities.each do |city| %>
 
-    <li class="col-md-8 col-sm-8 col-xs-8 text-uppercase city_title"><%= link_to city.title, city_path(city) %></li>
+
+    <li class="col-md-8 col-sm-8 col-xs-8 text-uppercase city_title">
+      <a href="<%= city_path(city) %>"><img class = 'city-pic' src="<%= city.photo_url %>" alt="" ></a>
+      <%= link_to city.title, city_path(city) %>
+    </li>
     <% if user_signed_in?  %>
     <% if current_user.is_admin? %>
   <a href="/cities/<%=city.id%>/edit" class="col-md-2 col-sm-2 col-xs-2 text-right"><i class="material-icons edit_icon hoverable">mode_edit</i></a>
@@ -116,8 +123,3 @@ function initMap() {
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZKKQxobueF-UsooRhMCYsxV1y8CjgYgQ&callback=initMap" type="text/javascript">
 
   </script>
-
-
-
-
-
