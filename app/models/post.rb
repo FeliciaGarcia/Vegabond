@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
 
-
     belongs_to :user
     belongs_to :city
 
@@ -11,3 +10,4 @@ class Post < ApplicationRecord
 
 
 end
+#routes for posts as it relates to users and cities

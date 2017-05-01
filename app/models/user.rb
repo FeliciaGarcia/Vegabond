@@ -9,3 +9,4 @@ class User < ApplicationRecord
 
     validates :photo_url, presence: true
 end
+#ERD relationships as well as our validation after a user is logged in
