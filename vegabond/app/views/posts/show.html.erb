@@ -1,4 +1,23 @@
 
-<img src="<%= @post.user.photo_url %>" style="max-width: 200px">
-<h2><%= @post.title %></h2> <br>
-<h3><%= @post.content %></h3>
+
+  <div class="col s12 m7">
+
+    <div class="card horizontal">
+      <div class="card-image">
+		<img src="<%= @post.user.photo_url %>" style="max-width: 200px">
+			<h5>Name: <%= @post.user.full_name %> </h5>
+
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+		 <h3><%= @post.content %></h3>
+		 <h5><%= @post.title %></h5> <br>
+
+         
+        </div>
+        <div class="card-action">
+          <a href="/cities/1">Go Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
