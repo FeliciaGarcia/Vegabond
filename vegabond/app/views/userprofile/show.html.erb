@@ -1,45 +1,40 @@
 <div class="profile_page">
-<h2><%= @user.full_name %></h2>
-<img src="<%= @user.photo_url %>">
+    <h2><%= @user.full_name %></h2>
+    <img src="<%= @user.photo_url %>">
 
 
 
+  <div class ='col-md-12 posts-section'>
+     <% @posts.each do |post|%>
+
+
+    <p><%= post.title %></p> <br>
+    <p><%=post.content %></p>
 
 
 
-
-<div class ='col-md-12 posts-section'>
-<% @posts.each do |post|%>
-
-
-<p><%= post.title %></p> <br>
-<p><%=post.content %></p>
-
-
-
-<%=post.city_id%>
-<% if user_signed_in? %>
+    <%=post.city_id%>
+    <% if user_signed_in? %>
 
     <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>/edit"><%= post.title%></a>
-<% end %>
+    <% end %>
 
-<div class="col-md-12">
+    <div class="col-md-12">
 
-                    <a class="waves-effect waves-light btn red right" type="submit" href="#modal1">Delete</a>
+      <a class="waves-effect waves-light btn red right" type="submit" href="#modal1">Delete</a>
 
-
-  <!-- Modal Structure -->
-                  <div id="modal1" class="modal">
-                    <div class="modal-content">
-                      <h4>Are you sure you wanna delete the post?</h4>
-
-                    </div>
-                    <div class="modal-footer">
-                      <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>" data-method = "DELETE" class="modal-action modal-close waves-effect waves-green btn-flat">YES</a>
-                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
-                    </div>
-                  </div>
-                </div>
+      <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                 <h4>Are you sure you wanna delete the post?</h4>
             </div>
+            <div class="modal-footer">
+                  <a href="/cities/<%=post.city_id%>/posts/<%=post.id%>" data-method = "DELETE" class="modal-action modal-close waves-effect waves-green btn-flat">YES</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">No</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
 <% end %>
 
