@@ -10,10 +10,14 @@
       </div>
 
       <div class="col-md-4 col-sm-4 col-xs-4 text-right user_last_seen">
+        <%= link_to '<i class="material-icons edit_icon hoverable">mode_edit</i>'.html_safe, edit_user_registration_path %>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 text-right user_last_seen">
         Last seen <%=time_ago_in_words(current_user.last_sign_in_at).gsub('about','')%> ago
       </div>
 
-      <div class="col-md-4 col-sm-4 col-xs-4 text-right user_created">
+      <div class="col-md-12 col-sm-12 col-xs-12 text-right user_created">
         User since <%=time_ago_in_words(current_user.created_at).gsub('about','')%>
       </div>
 
