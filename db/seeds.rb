@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.create([{email: 'lanchana@gmail.com', photo_url: "http://i1320.photobucket.com/albums/u528/lanchanagupta/profile-pic_zpsyjza7zrf.jpg", is_admin: true, password: "lanchana", password_confirmation: "lanchana"}])
+# user = User.create([{email: 'lanchana@gmail.com', photo_url: "http://i1320.photobucket.com/albums/u528/lanchanagupta/profile-pic_zpsyjza7zrf.jpg", is_admin: true, password: "lanchana", password_confirmation: "lanchana"}])
+user = User.create([{email: 'felicia@gmail.com', photo_url: "http://i.imgur.com/WL327p5.png", is_admin: true, password: "felicia", password_confirmation: "felicia"}])
