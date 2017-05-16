@@ -1,74 +1,69 @@
-<div class="col-md-12 col-sm-12 col-xs-12">
+
+<div>
         <!-- <img src="https://www.atlantatrails.com/images/home/hero/georgia-waterfalls-top-hikes.jpg" style="width: 100vw; min-height: 400px;  "> -->
+
        <div class="slider">
     <ul class="slides">
     <li>
-        <!-- <img src="https://static.pexels.com/photos/30732/pexels-photo-30732.jpg"> -->
-        <img src="http://i.imgur.com/NtuO4z8.jpg">
+        <img src="https://static.pexels.com/photos/30732/pexels-photo-30732.jpg">
          <!-- random image -->
          <div class="caption center-align">
-          <h4 class="center quote">"We travel not to escape life, but for life not to escape us."</h4>
+           <h4 class="center quote">"We travel not to escape life, but for life not to escape us."</h4>
         </div>
       </li>
       <li>
-        <img src="http://i.imgur.com/zGe6eOx.jpg"> <!-- random image -->
+        <img src="http://i.imgur.com/bxt9atD.jpg"> <!-- random image -->
+
+      </li>
+
+      <li>
+        <img src="https://static.pexels.com/photos/245618/pexels-photo-245618.jpeg"> <!-- random image -->
       </li>
       <li>
-        <img src="http://i.imgur.com/oH0Ad6i.jpg"> <!-- random image -->
-      </li>
-      <li>
-        <img src="http://i.imgur.com/BbzU6Wp.jpg"> <!-- random image -->
+        <img src="https://newevolutiondesigns.com/images/freebies/city-wallpaper-35.jpg"> <!-- random image -->
       </li>
     </ul>
   </div>
+
+
+
+
+
 <div class="container">
     <div class="city_index_desc">
-        <div><p class="blurb">Boundless is an app that gives users a platform to share their travel experiences from different cities all over the globe. Explore all that the world has to offer and be boundless.
-        </p></div>
+        <div><div><p class="blurb">Boundless is an app that gives users a platform to share their travel experiences from different cities all over the globe. Explore all that the world has to offer and be boundless.
+        </p></div></div>
     </div>
-</div>
-<div>
-<div class="col-md-12 col-sm-12 col-xs-12 ">
-  <hr class="col-md-12 col-sm-12 col-xs-12">
-  <h3 class="location_heading center text-uppercase">Locations</h3>
-  <hr class="col-md-12 col-sm-12 col-xs-12">
+
+<div class="row ">
     <ul >
 <hr class="col-md-12 col-sm-12 col-xs-12  ">
 <% @cities.each do |city| %>
-<div class="slider">
-    <ul class="slides">
-    <li>
-      <% if user_signed_in?  %>
-      <% if current_user.is_admin? %>
-    <a href="/cities/<%=city.id%>/edit" class="col-md-2 col-sm-2 col-xs-2 text-right"><i class="material-icons user-material-icons edit_icon hoverable" >mode_edit</i></a>
-    <a href="/cities/<%=city.id%>" data-method = "DELETE" class="col-md-2 col-sm-2 col-xs-2 text-right"><i class="material-icons user-material-icons delete_icon hoverable">delete</i></a>
-  <% end %>
-  <% end %>
-        <img class = 'city-pic col-md-12 ' src="<%= city.photo_url %>" alt="" >
-         <!-- random image -->
-         <div class="caption center-align">
-          <h3 class="location_name text-capitalize"><%= link_to city.title, city_path(city) %></h3>
-        </div>
-      </li>
-    </ul>
-</div>
-    <li class="col-md-12 col-sm-12 col-xs-12 text-uppercase city_title">
-      <a href="<%= city_path(city) %>">
-      <!-- <img class = 'city-pic col-md-12 ' src="<%= city.photo_url %>" alt="" > -->
-      </a>
-      <!-- <div class="caption center-align"><%= link_to city.title, city_path(city) %></div> -->
-    </li>
+
+    <li class="col-md-8 col-sm-8 col-xs-8 text-uppercase city_title"><%= link_to city.title, city_path(city) %></li>
+    <% if user_signed_in?  %>
+    <% if current_user.is_admin? %>
+  <a href="/cities/<%=city.id%>/edit" class="col-md-2 col-sm-2 col-xs-2 text-right"><i class="material-icons edit_icon hoverable">mode_edit</i></a>
+  <a href="/cities/<%=city.id%>" data-method = "DELETE" class="col-md-2 col-sm-2 col-xs-2 text-right"><i class="material-icons delete_icon hoverable">delete</i></a>
+
+<% end %>
+<% end %>
 <hr class="col-md-12  ">
 <% end %>
 </ul>
 </div>
-</div>
-<div class="container">
 <% if user_signed_in?%>
 <div id="map" style="width:100%;height:400px;"class="z-depth-3"></div>
 <% end %>
 </div>
+
+
+
     </div>
+
+
+
+
     <script>
   var locations = [];
 <% @cities.each do |city|%>
@@ -107,3 +102,4 @@ function initMap() {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZKKQxobueF-UsooRhMCYsxV1y8CjgYgQ&callback=initMap" type="text/javascript">
   </script>
+
